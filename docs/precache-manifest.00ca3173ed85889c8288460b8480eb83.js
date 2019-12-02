@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c7053b842b86d670e6aa24709b850fb3",
+    "revision": "412fa9404b942f0299643f3a620cd604",
     "url": "/css/styles.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fonts/weathericons-regular-webfont.woff2"
   },
   {
-    "revision": "ef8decd0d83026c7e174f99c3e9a27d3",
+    "revision": "08dacdfd0dbefb3324473b83025dd812",
     "url": "/index.html"
   },
   {
