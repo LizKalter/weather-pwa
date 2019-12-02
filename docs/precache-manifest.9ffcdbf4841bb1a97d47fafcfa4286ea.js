@@ -1,34 +1,34 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "412fa9404b942f0299643f3a620cd604",
-    "url": "/css/styles.css"
+    "url": "./css/styles.css"
   },
   {
     "revision": "4b658767da6bd92ce2addb3ce512784d",
-    "url": "/fonts/weathericons-regular-webfont.eot"
+    "url": "./fonts/weathericons-regular-webfont.eot"
   },
   {
     "revision": "ecaf8b481729b18f6a8494d9f691cdae",
-    "url": "/fonts/weathericons-regular-webfont.svg"
+    "url": "./fonts/weathericons-regular-webfont.svg"
   },
   {
     "revision": "4618f0de2a818e7ad3fe880e0b74d04a",
-    "url": "/fonts/weathericons-regular-webfont.ttf"
+    "url": "./fonts/weathericons-regular-webfont.ttf"
   },
   {
     "revision": "8cac70ebda3f23ce472110d9f21e8593",
-    "url": "/fonts/weathericons-regular-webfont.woff"
+    "url": "./fonts/weathericons-regular-webfont.woff"
   },
   {
     "revision": "1cd48d78f06d33973d9d761d426e69bf",
-    "url": "/fonts/weathericons-regular-webfont.woff2"
+    "url": "./fonts/weathericons-regular-webfont.woff2"
   },
   {
     "revision": "08dacdfd0dbefb3324473b83025dd812",
-    "url": "/index.html"
+    "url": "./index.html"
   },
   {
-    "revision": "f419ee6821fc2d71ba01",
-    "url": "/js/scripts.js"
+    "revision": "091adb4bf401637218e6",
+    "url": "./js/scripts.js"
   }
 ]);

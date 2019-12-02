@@ -9,7 +9,7 @@ const Critters = require('critters-webpack-plugin');
 module.exports = [{
   entry: ['./dev/sass/styles.scss', './dev/js/scripts.js'],
   output: {
-    publicPath: '/',
+    publicPath: './',
     path: path.resolve(__dirname, 'docs'),
     filename: 'js/scripts.js',
   },
@@ -71,7 +71,7 @@ module.exports = [{
     }),
     new WorkboxPlugin.InjectManifest({
       swSrc: './dev/src-sw.js',
-      swDest: 'sw.js'
+      swDest: './sw.js'
     }),
     new CopyPlugin([
       { from: './dev/favicon', to: './' },
