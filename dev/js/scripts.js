@@ -5,6 +5,7 @@ const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
 weatherForm.addEventListener('submit', function(e) {
   e.preventDefault();
+  weatherForm.querySelector('.city-field').blur();
   showProgressBar();
   showWeatherByCity();
 });
