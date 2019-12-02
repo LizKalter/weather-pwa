@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./fonts/weathericons-regular-webfont.woff2"
   },
   {
-    "revision": "5dd845dcf668d7a37c551f079d81049d",
+    "revision": "9d12580f02e7e884c3dd10d90b49d87e",
     "url": "./index.html"
   },
   {
