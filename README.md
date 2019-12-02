@@ -2,7 +2,7 @@
 
 A PWA displaying current weather conditions from the Open Weather Map API.
 
-[View the demo]()
+[View the demo](https://lizkalter.github.io/weather-pwa/)
 
 ## Built With
 
