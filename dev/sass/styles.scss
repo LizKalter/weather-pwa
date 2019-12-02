@@ -28,8 +28,18 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
+.content-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
 main {
-  padding-top: 92px;
+  padding-top: 92px; // height of header
+  padding-bottom: 3.5rem; // height of footer
+
+  @media (min-width: 768px) {
+    padding-bottom: 4rem; // height of footer
+  }
 }
 
 .progress-bar-container {

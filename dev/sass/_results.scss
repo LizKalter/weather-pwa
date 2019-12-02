@@ -14,12 +14,20 @@
 
 .icon {
   font-size: 6rem;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  @media (min-width: 400px) {
+    width: auto;
+    margin: 0;
+  }
 }
 
 .results-group {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .temp {
@@ -34,7 +42,12 @@
 }
 
 .description {
+  margin-top: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 400;
+
+  @media (min-width: 400px) {
+    margin: 0;
+  }
 }
