@@ -36,10 +36,10 @@
 }
 
 .copyright {
-  border-right: 1px solid #c0c5ce;
+  border-right: 1px solid #333;
   padding-right: 4px;
 
-  .day & {
-    border-right: 1px solid #333;
+  .night & {
+    border-right: 1px solid #c0c5ce;
   }
 }
