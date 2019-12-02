@@ -5,9 +5,16 @@ const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
 weatherForm.addEventListener('submit', function(e) {
   e.preventDefault();
-  weatherForm.querySelector('.city-field').blur();
-  showProgressBar();
-  showWeatherByCity();
+  cityField.blur();
+  if (cityField.value) {
+    showProgressBar();
+    showWeatherByCity();
+  } else if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(function() {
+      showProgressBar();
+      showWeatherByCoords();
+    });
+  }
 });
 
 for (var i = 0 ; i < unitButtons.length; i++) {
@@ -16,13 +23,17 @@ for (var i = 0 ; i < unitButtons.length; i++) {
       showProgressBar();
       showWeatherByCity();
     } else if ('geolocation' in navigator) {
-      showProgressBar();
-      navigator.geolocation.getCurrentPosition(showWeatherByCoords);
+      navigator.geolocation.getCurrentPosition(function() {
+        showProgressBar();
+        showWeatherByCoords();
+      });
     }
   });
 }
 
 if ('geolocation' in navigator) {
-  showProgressBar();
-  navigator.geolocation.getCurrentPosition(showWeatherByCoords);
+  navigator.geolocation.getCurrentPosition(function() {
+    showProgressBar();
+    showWeatherByCoords();
+  });
 }
