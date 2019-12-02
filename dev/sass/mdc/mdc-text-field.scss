@@ -1,0 +1,152 @@
+//
+// Copyright 2017 Google Inc.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
+
+@import "@material/animation/variables";
+@import "mdc-floating-label";
+@import "@material/notched-outline/mdc-notched-outline";
+@import "@material/rtl/mixins";
+@import "@material/theme/variables";
+@import "@material/typography/mixins";
+@import "@material/typography/variables";
+@import "@material/textfield/functions";
+@import "@material/textfield/helper-text/mdc-text-field-helper-text";
+@import "@material/textfield/mixins";
+@import "@material/textfield/variables";
+@import "@material/ripple/mixins";
+
+// postcss-bem-linter: define text-field
+
+.mdc-text-field {
+  // Text Field intentionally omits press ripple, so each state needs to be specified individually.
+  @include mdc-states-base-color($mdc-text-field-ink-color);
+
+  // Height
+  @include mdc-text-field-height($mdc-text-field-height);
+
+  // Shape
+  @include mdc-text-field-shape-radius(small);
+
+  // Colors
+  @include mdc-text-field-label-color($mdc-text-field-label);
+  @include mdc-text-field-ink-color($mdc-text-field-ink-color);
+  @include mdc-text-field-caret-color(primary);
+  @include mdc-text-field-helper-text-color($mdc-text-field-helper-text-color);
+  @include mdc-text-field-fill-color($mdc-text-field-background);
+
+  // Floating Label
+  @include mdc-text-field-floating-label_;
+
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* @alternate */
+  will-change: opacity, transform, color;
+}
+
+.mdc-text-field__input {
+  // Exclude setting line-height to keep caret (text cursor) same height as the input text in iOS browser.
+  @include mdc-typography(subtitle1, $exclude-props: (line-height));
+
+  align-self: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding:
+    $mdc-text-field-input-padding-top
+    $mdc-text-field-input-padding
+    $mdc-text-field-input-padding-bottom;
+  transition: mdc-text-field-transition(opacity);
+  border: none;
+  border-bottom: 1px solid;
+  border-radius: 0;
+  background: none;
+  appearance: none;
+
+  &::placeholder {
+    transition: mdc-text-field-transition(opacity, $duration: 67ms);
+    opacity: 0;
+    color: $mdc-text-field-placeholder-ink-color;
+  }
+
+  // Override the placeholder styles in IE with important rule to improve specificity.
+  // stylelint-disable-next-line selector-no-vendor-prefix
+  &:-ms-input-placeholder {
+    color: $mdc-text-field-placeholder-ink-color !important;
+  }
+
+  // Always show placeholder for text fields that has no label and show only on focused state when label is present.
+  .mdc-text-field--focused &::placeholder {
+    transition-delay: 40ms;
+    transition-duration: 110ms;
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // Keep Chrome autofill behind the notched outline
+  &:-webkit-autofill {
+    z-index: auto !important;
+  }
+}
+// stylelint-disable-next-line plugin/selector-bem-pattern
+// Move label when text-field gets auto-filled in Chrome.
+.mdc-text-field__input:-webkit-autofill + .mdc-floating-label {
+  transform: translateY(-50%) scale(.75);
+  cursor: auto;
+}
+
+.mdc-text-field--outlined {
+  @include mdc-text-field-outlined_;
+}
+
+.mdc-text-field--outlined.mdc-text-field--focused {
+  @include mdc-text-field-outlined-focused_;
+}
+
+// postcss-bem-linter: define text-field-helper-text
+// stylelint-disable plugin/selector-bem-pattern
+.mdc-text-field-helper-line {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  .mdc-text-field + & {
+    padding-right: $mdc-text-field-helper-line-padding;
+    padding-left: $mdc-text-field-helper-line-padding;
+  }
+}
+// stylelint-enable plugin/selector-bem-pattern
+// postcss-bem-linter: end
+
+// mdc-form-field tweaks to align text field label correctly
+// stylelint-disable selector-max-type
+.mdc-form-field > .mdc-text-field + label {
+  align-self: flex-start;
+}
+// stylelint-enable selector-max-type
+
+.mdc-text-field--focused {
+  @include mdc-text-field-focused_;
+}

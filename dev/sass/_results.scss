@@ -1,0 +1,40 @@
+.results {
+  text-align: center;
+
+  .night & {
+    color: #ccc;
+  }
+}
+
+.city {
+  font-size: 3rem;
+  line-height: 3.125rem;
+  font-weight: 400;
+}
+
+.icon {
+  font-size: 6rem;
+}
+
+.results-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp {
+  margin: 0 20px;
+  font-size: 3rem;
+  line-height: 3.125rem;
+  font-weight: 600;
+}
+
+.min-max {
+  text-align: left;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}

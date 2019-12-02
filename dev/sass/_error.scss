@@ -1,0 +1,11 @@
+.error-message {
+  margin-top: 50px;
+  text-align: center;
+
+  &:after {
+    content: '\2639';
+    display: block;
+    font-size: 5rem;
+    opacity: .3;
+  }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <title>Weather App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Description" content="Current weather provided by Open Weather Map.">
+  <meta property="og:title" content="Current Weather Conditions" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lizkalter.github.io/weather-pwa" />
+  <meta property="og:description" content="Current weather provided by Open Weather Map." />
+  <meta property="og:image" content="https://lizkalter.github.io/weather-pwa/android-chrome-512x512.png" />
+  <meta property="og:image:alt" content="Current Weather" />
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2196f3">
+  <meta name="msapplication-TileColor" content="#2196f3">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="/manifest.json">
+  
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header id="header">
+    <form class="city-form">
+      <section>
+        <div class="mdc-city-field-wrapper">
+          <div class="mdc-city-field mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+            <input type="text" class="city-field mdc-text-field__input" id="text-field-hero-input" autoComplete="off" name="city">
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <label for="text-field-hero-input" class="mdc-floating-label">Enter city or zip code</label>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
+          <div class="mdc-text-field-helper-line"><p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg" id="text-field-filled-helper-text">Data provided by <a class="external-link" href="https://openweathermap.org/">Open Weather Map</a></p></div>
+        </div>
+
+        <div class="unit-field-wrapper">
+        <label class="units-field units-imperial">
+          <input type="radio" id="radio-F" name="units" value="imperial" checked>
+          <span class="button">
+            <span>&deg;F</span>
+          </span>
+        </label>
+        <label class="units-field units-metric">
+          <input type="radio" id="radio-C" name="units" value="metric">
+          <span class="button">
+            <span>&deg;C</span>
+          </span>
+        </label>
+        </div>
+      </section>
+    </form>
+  </header>
+
+  <main>
+    <div class="progress-bar-container" style="display: none">
+      <div class="message">Loading Weather</div>
+      <div role="progressbar" class="spinner">
+      </div>
+    </div>
+
+    <div class="results">
+      <h1 class="city"></h1>
+
+      <div class="results-group">
+        <div class="icon">
+          <i></i>
+        </div>
+
+        <div class="temp"></div>
+            
+        <div class="min-max">
+          <div class="min"></div>
+          <div class="max"></div>
+        </div>
+      </div>
+
+      <div class="description"></div>
+    </div>
+    <div class="error-message"></div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-content">
+      <span class="copyright">© <a href="https://lizkalter.github.io/">Liz Kalter</a> 2019</span>
+      <a href="#">GitHub Repo</a>
+    </div>
+  </footer>
+
+  <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+  </script>
+  <script src="js/scripts.js" async></script>
+</body>
+</html>

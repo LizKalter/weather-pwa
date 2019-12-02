@@ -1,0 +1,17 @@
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  z-index: 4;
+
+  section {
+    display: inline-flex;
+    flex: 1 1 auto;
+    align-items: center;
+    z-index: 1;
+    padding: 8px 12px;
+  }
+}

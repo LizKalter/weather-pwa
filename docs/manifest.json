@@ -1,0 +1,29 @@
+{
+  "name": "Current conditions provided by Open Weather Map",
+  "short_name": "Weather",
+  "icons": [
+      {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "/android-chrome-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+      }
+  ],
+  "start_url": "/",
+  "background_color": "#2196F3",
+  "theme_color": "#000000",
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "ltr",
+  "lang": "en-US",
+  "description": "Displays current weather conditions provided by Open Weather Map",
+  "scope": "/",
+  "serviceworker": {
+    "src": "./sw.js",
+    "scope": "/"
+  }
+}

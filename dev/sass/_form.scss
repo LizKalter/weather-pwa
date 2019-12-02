@@ -1,0 +1,99 @@
+.city-form {
+  display: flex;
+  height: 92px;
+  width: 100%;
+}
+
+.mdc-city-field-wrapper {
+  width: 100%;
+  margin-top: 18px;
+
+  a {
+    color: #ccc;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.mdc-city-field {
+  width: 100%;
+  height: 44px;
+
+  @include mdc-text-field-ink-color(#fff);
+  @include mdc-text-field-label-color(#ccc);
+  @include mdc-text-field-outline-color(transparent);
+  @include mdc-text-field-focused-outline-color(transparent);
+  @include mdc-text-field-outline-shape-radius(28px);
+  @include mdc-text-field-helper-text-color(#ccc);
+
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    background-color: #333;
+  }
+}
+
+
+.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+  transform: translateY(-38.75px) scale(0.75);
+}
+
+.unit-field-wrapper {
+  position: absolute;
+  right: 12px;
+}
+
+.units-field {
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input:checked + .button {
+      background-color: #2196F3;
+      color: #fff;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    min-width: 32px;
+    padding: 0 8px;
+    padding-right: 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 22px;
+    color: #999;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: .08929em;
+    font-family: sans-serif;
+  }
+}
+
+.units-imperial {
+  margin-left: 10px;
+  float: left;
+
+  .button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.units-metric {
+  float: right;
+  
+  .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
