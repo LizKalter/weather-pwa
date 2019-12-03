@@ -46,6 +46,14 @@
   transform: translateY(-40.75px) scale(0.75);
 }
 
+.mdc-text-field-helper-text {
+  margin-top: 5px;
+
+  &:before {
+    display: none;
+  }
+}
+
 .unit-field-wrapper {
   position: absolute;
   right: 12px;
