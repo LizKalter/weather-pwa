@@ -10,9 +10,9 @@ weatherForm.addEventListener('submit', function(e) {
     showProgressBar();
     showWeatherByCity();
   } else if ('geolocation' in navigator) {
-    navigator.geolocation.getCurrentPosition(function() {
+    navigator.geolocation.getCurrentPosition(function(position) {
       showProgressBar();
-      showWeatherByCoords();
+      showWeatherByCoords(position);
     });
   }
 });
@@ -23,17 +23,17 @@ for (var i = 0 ; i < unitButtons.length; i++) {
       showProgressBar();
       showWeatherByCity();
     } else if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(function() {
+      navigator.geolocation.getCurrentPosition(function(position) {
         showProgressBar();
-        showWeatherByCoords();
+        showWeatherByCoords(position);
       });
     }
   });
 }
 
 if ('geolocation' in navigator) {
-  navigator.geolocation.getCurrentPosition(function() {
+  navigator.geolocation.getCurrentPosition(function(position) {
     showProgressBar();
-    showWeatherByCoords();
+    showWeatherByCoords(position);
   });
 }
